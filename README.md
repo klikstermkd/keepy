@@ -1,3 +1,6 @@
+This is an AngularJS web appication, which uses Firebase as a backend.
+
+
 To install the app locally on your PC, do the following steps:
 
 1. If you haven't already installed bower, that do that first: ```npm install -g bower```
