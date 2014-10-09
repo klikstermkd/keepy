@@ -1,0 +1,32 @@
+ <form class="form-signin" name="form" novalidate>
+   <h2 class="form-signin-heading">Log In</h2>
+   <input
+      type="email"
+      name="email"
+      ng-model="loginCtrl.user.email"
+      class="form-control"
+      id="email"
+      kp-input-focus
+      placeholder="Email"
+      required />
+   <input
+      type="password"
+      ng-model="loginCtrl.user.password"
+      class="form-control"
+      id="password"
+      name="password"
+      kp-input-focus
+      placeholder="Password"
+      required />
+   <button class="btn btn-lg btn-primary btn-block login-btn" type="submit" ng-disabled="form.$invalid" kp-loading-auth action="login" user="loginCtrl.user">Log In</button>
+
+   <div class="form-error form-double-error" ng-show="form.email.$dirty && form.email.$invalid && !form.email.$focused">
+      <div class="alert alert-danger" ng-show="form.email.$error.required">Your email is required.</div>
+      <div class="alert alert-danger" ng-show="form.email.$error.email">That is not a valid email. Please input a valid email.</div>
+   </div>
+   <div class="form-error form-double-error" ng-show="form.password.$dirty && !form.password.$focused">
+      <div class="alert alert-danger" ng-show="form.password.$error.required">Your password is required.</div>
+   </div>
+
+   <div ng-bind="errorMsg" ng-show="errorMsg" class="form-error alert alert-warning"></div>
+</form>
